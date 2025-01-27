@@ -6,46 +6,63 @@
     <meta name="description" content="Blog de biologia com artigos informativos e curiosidades">
     <meta name="keywords" content="biologia, ciência, educação, blog">
     <title>Meu Blog de Biologia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao Meu Blog de Biologia</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="about.html">Sobre</a></li>
-                <li><a href="contact.html">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <h1>Bem-vindo ao Meu Blog de Biologia</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="about.html">Sobre</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                    <li><a href="#" id="loginBtn">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <article>
-            <h2>Primeiro Post</h2>
-            <p>Este é o meu primeiro post no blog de biologia!</p>
-            <p>Hoje vamos falar sobre a importância da biodiversidade.</p>
-            <img src="assets/biodiversidade.jpg" alt="Imagem sobre biodiversidade">
-        </article>
-        <section>
-            <h2>Posts Recentes</h2>
-            <ul>
-                <li><a href="post2.html">O Papel dos Ecossistemas</a></li>
-                <li><a href="post3.html">Impactos das Mudanças Climáticas</a></li>
-            </ul>
-        </section>
-        <div id="disqus_thread"></div>
-        <script>
-            (function() { 
-                var d = document, s = d.createElement('script');
-                s.src = 'https://SEU_NOME_DISQUS.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
+        <div class="container main-container">
+            <section class="highlight">
+                <h2 class="section-title">Destaque do Blog</h2>
+                <div class="highlight-card">
+                    <img src="assets/biodiversidade.jpg" alt="Imagem sobre biodiversidade">
+                    <div class="highlight-content">
+                        <h3>Importância da Biodiversidade</h3>
+                        <p>Saiba por que a biodiversidade é essencial para a vida no planeta.</p>
+                        <a href="post1.html" class="btn">Leia Mais</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-posts">
+                <h2 class="section-title">Posts Recentes</h2>
+                <div class="grid">
+                    <article class="post-card">
+                        <h3>O Papel dos Ecossistemas</h3>
+                        <p>Entenda como os ecossistemas sustentam a vida.</p>
+                        <a href="post2.html" class="btn">Leia Mais</a>
+                    </article>
+                    <article class="post-card">
+                        <h3>Impactos das Mudanças Climáticas</h3>
+                        <p>Descubra como o clima está afetando a biodiversidade.</p>
+                        <a href="post3.html" class="btn">Leia Mais</a>
+                    </article>
+                    <article class="post-card">
+                        <h3>Soluções Sustentáveis</h3>
+                        <p>Iniciativas que ajudam a preservar o meio ambiente.</p>
+                        <a href="post4.html" class="btn">Leia Mais</a>
+                    </article>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2025 Meu Nome</p>
-        <p><a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20blog%20post!&url=URL_DO_POST" target="_blank">Compartilhar no Twitter</a></p>
+        <p>&copy; 2025 Meu Nome - Todos os direitos reservados</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
