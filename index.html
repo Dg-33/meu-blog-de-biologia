@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog de biologia com artigos informativos e curiosidades">
+    <meta name="keywords" content="biologia, ciência, educação, blog">
+    <title>Meu Blog de Biologia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Blog de Biologia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h2>Primeiro Post</h2>
+            <p>Este é o meu primeiro post no blog de biologia!</p>
+            <p>Hoje vamos falar sobre a importância da biodiversidade.</p>
+            <img src="assets/biodiversidade.jpg" alt="Imagem sobre biodiversidade">
+        </article>
+        <section>
+            <h2>Posts Recentes</h2>
+            <ul>
+                <li><a href="post2.html">O Papel dos Ecossistemas</a></li>
+                <li><a href="post3.html">Impactos das Mudanças Climáticas</a></li>
+            </ul>
+        </section>
+        <div id="disqus_thread"></div>
+        <script>
+            (function() { 
+                var d = document, s = d.createElement('script');
+                s.src = 'https://SEU_NOME_DISQUS.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2025 Meu Nome</p>
+        <p><a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20blog%20post!&url=URL_DO_POST" target="_blank">Compartilhar no Twitter</a></p>
+    </footer>
+</body>
+</html>
