@@ -3,66 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog de biologia com artigos informativos e curiosidades">
-    <meta name="keywords" content="biologia, ciência, educação, blog">
-    <title>Meu Blog de Biologia</title>
+    <meta name="description" content="Guia de Cultivo Completo para iniciantes e especialistas.">
+    <meta name="keywords" content="guia de cultivo, biologia, plantas, cultivo">
+    <title>Guia de Cultivo - Blog de Biologia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="container header-container">
-            <h1>Bem-vindo ao Meu Blog de Biologia</h1>
+        <div class="header-container">
+            <h1>🌿 Blog de Biologia</h1>
             <nav>
                 <ul class="menu">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="about.html">Sobre</a></li>
-                    <li><a href="contact.html">Contato</a></li>
+                    <li><a href="guia-cultivo.html">Guia de Cultivo</a></li>
+                    <li><a href="#dicas">Dicas</a></li>
                     <li><a href="#" id="loginBtn">Entrar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <div class="container main-container">
-            <section class="highlight">
-                <h2 class="section-title">Destaque do Blog</h2>
-                <div class="highlight-card">
-                    <img src="assets/biodiversidade.jpg" alt="Imagem sobre biodiversidade">
-                    <div class="highlight-content">
-                        <h3>Importância da Biodiversidade</h3>
-                        <p>Saiba por que a biodiversidade é essencial para a vida no planeta.</p>
-                        <a href="post1.html" class="btn">Leia Mais</a>
-                    </div>
-                </div>
-            </section>
+        <section class="guide-intro">
+            <h2>Guia de Cultivo Completo 🌱</h2>
+            <p>Explore nosso guia abrangente sobre cultivo, ideal para iniciantes e especialistas! Aqui, você encontrará dicas essenciais para cuidar de suas plantas, aumentar a produtividade e manter um ambiente sustentável.</p>
+            <a href="assets/Guia Completo de Cultivo de Hortaliças.pdf" download>Baixar o Guia em PDF</a>
+        </section>
 
-            <section class="recent-posts">
-                <h2 class="section-title">Posts Recentes</h2>
-                <div class="grid">
-                    <article class="post-card">
-                        <h3>O Papel dos Ecossistemas</h3>
-                        <p>Entenda como os ecossistemas sustentam a vida.</p>
-                        <a href="post2.html" class="btn">Leia Mais</a>
-                    </article>
-                    <article class="post-card">
-                        <h3>Impactos das Mudanças Climáticas</h3>
-                        <p>Descubra como o clima está afetando a biodiversidade.</p>
-                        <a href="post3.html" class="btn">Leia Mais</a>
-                    </article>
-                    <article class="post-card">
-                        <h3>Soluções Sustentáveis</h3>
-                        <p>Iniciativas que ajudam a preservar o meio ambiente.</p>
-                        <a href="post4.html" class="btn">Leia Mais</a>
-                    </article>
-                </div>
-            </section>
-        </div>
+        <section class="guide-viewer">
+            <h3>Visualize o Guia Aqui</h3>
+            <iframe src="assets/Guia%20Completo%20de%20Cultivo%20de%20Hortaliças.pdf" width="100%" height="600px" style="border: none;"></iframe>
+        </section>
+
+        <section class="comments-section">
+            <h3>Deixe seu Comentário</h3>
+            <p>Gostou do guia? Deixe sua opinião ou compartilhe suas dúvidas abaixo!</p>
+            <form id="commentsForm">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                
+                <label for="comment">Comentário:</label>
+                <textarea id="comment" name="comment" rows="4" placeholder="Escreva seu comentário aqui..." required></textarea>
+                
+                <button type="submit" class="btn-primary">Enviar Comentário</button>
+            </form>
+            <div id="commentsDisplay">
+                <!-- Comentários serão exibidos aqui dinamicamente -->
+            </div>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2025 Meu Nome - Todos os direitos reservados</p>
+        <p>&copy; 2025 Meu Blog de Biologia. Todos os direitos reservados.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

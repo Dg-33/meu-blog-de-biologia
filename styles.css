@@ -1,140 +1,135 @@
-/* Fontes e Estilos Gerais */
+/* Estilo Geral */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 0;
+    background: #f4f8fb;
     color: #333;
-    line-height: 1.6;
-    background-color: #f9f9f9;
 }
 
-/* Header */
 header {
-    background-color: #4CAF50;
+    background: linear-gradient(90deg, #4caf50, #81c784);
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
+    text-align: center;
 }
 
 .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
     align-items: center;
-    padding: 0 20px;
 }
 
-header h1 {
-    font-size: 1.8rem;
-    margin: 0;
-}
-
-nav ul {
+.menu {
     list-style: none;
     display: flex;
     gap: 15px;
-    margin: 0;
-    padding: 0;
 }
 
-nav ul li a {
+.menu a {
     color: white;
-    text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s;
+    text-decoration: none;
 }
 
-nav ul li a:hover {
-    color: #ffeb3b;
+h1, h2, h3 {
+    color: #2e7d32;
 }
 
-/* Container Geral */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+main {
+    max-width: 1000px;
+    margin: auto;
     padding: 20px;
 }
 
-/* Seções */
-.section-title {
-    font-size: 2rem;
+/* Seção de Introdução do Guia */
+.guide-intro {
     text-align: center;
+    padding: 40px 20px;
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
     margin-bottom: 20px;
-    color: #4CAF50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Destaque */
-.highlight {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
+.guide-intro p {
+    font-size: 1.1rem;
+    margin: 10px 0 20px;
 }
 
-.highlight img {
-    max-width: 300px;
-    border-radius: 10px;
-}
-
-.highlight-content h3 {
-    font-size: 1.5rem;
-    margin: 0 0 10px;
-}
-
-.highlight-content p {
-    margin: 0 0 15px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #4CAF50;
+.guide-intro a {
+    background: #388e3c;
     color: white;
-    text-decoration: none;
-    font-weight: 600;
+    padding: 10px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #45a049;
+.guide-intro a:hover {
+    background: #2e7d32;
 }
 
-/* Posts Recentes */
-.recent-posts .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* Visualizador do Guia */
+.guide-viewer {
+    margin-top: 30px;
 }
 
-.post-card {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.post-card:hover {
-    transform: translateY(-5px);
-}
-
-.post-card h3 {
-    font-size: 1.2rem;
-    margin: 0 0 10px;
-}
-
-.post-card p {
-    margin: 0 0 15px;
-}
-
-/* Footer */
-footer {
-    background-color: #4CAF50;
-    color: white;
+.guide-viewer h3 {
     text-align: center;
-    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+/* Seção de Comentários */
+.comments-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comments-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comments-section label {
+    font-weight: 600;
+}
+
+.comments-section input, 
+.comments-section textarea {
+    padding: 10px;
+    border: 1px solid #c8e6c9;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.comments-section button {
+    background: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.comments-section button:hover {
+    background: #388e3c;
+}
+
+/* Exibição de Comentários */
+#commentsDisplay {
+    margin-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
 }

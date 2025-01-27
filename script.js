@@ -1,43 +1,77 @@
+// Seleção de elementos do DOM
+const modal = document.getElementById("modal");
 const loginBtn = document.getElementById("loginBtn");
-const loginModal = document.getElementById("loginModal");
 const closeBtn = document.querySelector(".close");
+const loginForm = document.getElementById("loginForm");
 
-// Abrir modal
-loginBtn.addEventListener("click", () => {
-    loginModal.style.display = "flex";
+// Abrir o modal de login
+loginBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.style.display = "flex";
 });
 
-// Fechar modal
+// Fechar o modal ao clicar no "X"
 closeBtn.addEventListener("click", () => {
-    loginModal.style.display = "none";
+    modal.style.display = "none";
 });
 
-window.addEventListener("click", (event) => {
-    if (event.target === loginModal) {
-        loginModal.style.display = "none";
+// Fechar o modal ao clicar fora dele
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
     }
 });
 
-// Simulação de login e cadastro com armazenamento local
-document.getElementById("registerForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const email = document.getElementById("registerEmail").value;
-    const password = document.getElementById("registerPassword").value;
+// Interceptar o envio do formulário de login
+loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Prevenir o comportamento padrão do envio do formulário
 
-    localStorage.setItem(email, password);
-    alert("Cadastro realizado com sucesso!");
-    loginModal.style.display = "none";
-});
-
-document.getElementById("loginForm").addEventListener("submit", (event) => {
-    event.preventDefault();
+    // Capturar os valores do formulário
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    if (localStorage.getItem(email) === password) {
-        alert("Login realizado com sucesso!");
-    } else {
-        alert("E-mail ou senha inválidos!");
+    try {
+        // Enviar os dados para o backend usando fetch
+        const response = await fetch("/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        // Tratar a resposta
+        if (response.ok) {
+            const message = await response.text();
+            alert(message); // Exibir uma mensagem de sucesso
+            modal.style.display = "none"; // Fechar o modal
+        } else {
+            const errorMessage = await response.text();
+            alert(`Erro: ${errorMessage}`); // Exibir mensagem de erro
+        }
+    } catch (error) {
+        console.error("Erro no login:", error);
+        alert("Erro ao conectar ao servidor. Tente novamente mais tarde.");
     }
-    loginModal.style.display = "none";
+});
+// Script para Gerenciar Comentários
+document.getElementById("commentsForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita recarregar a página
+
+    // Capturar os valores dos campos
+    const name = document.getElementById("name").value;
+    const comment = document.getElementById("comment").value;
+
+    // Criar o elemento do comentário
+    const commentSection = document.getElementById("commentsDisplay");
+    const commentDiv = document.createElement("div");
+    commentDiv.innerHTML = `
+        <strong>${name}:</strong>
+        <p>${comment}</p>
+        <hr>
+    `;
+    commentSection.appendChild(commentDiv);
+
+    // Limpar os campos
+    document.getElementById("commentsForm").reset();
 });
