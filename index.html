@@ -6,55 +6,222 @@
     <meta name="description" content="Guia de Cultivo Completo para iniciantes e especialistas.">
     <meta name="keywords" content="guia de cultivo, biologia, plantas, cultivo">
     <title>Guia de Cultivo - Blog de Biologia</title>
+    <!-- Fonte e CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5fff5; /* Tom de verde claro */
+        }
+        header, footer {
+            background-color: #4CAF50; /* Verde agradável */
+            color: white;
+            padding: 10px 0;
+            text-align: center; /* Centraliza o texto */
+        }
+        .header-container, main, footer {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        nav .menu {
+            list-style: none;
+            padding: 0;
+            text-align: center; /* Centraliza o menu */
+        }
+        nav .menu li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        nav .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        nav .menu a:hover {
+            text-decoration: underline;
+        }
+        .help-gif {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            z-index: 100;
+            transition: transform 0.2s;
+            border: 2px solid #4CAF50;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .help-gif:hover {
+            transform: scale(1.1);
+        }
+        h1, h2, h3 {
+            color: #2E7D32;
+        }
+        a.btn-primary {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a.btn-primary:hover {
+            background-color: #45A049;
+        }
+        @media (max-width: 768px) {
+            nav .menu li {
+                display: block;
+                margin: 10px 0;
+            }
+            .help-gif {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: #fff;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        #sideNav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 200;
+            top: 0;
+            left: 0;
+            background-color: rgba(76, 175, 80, 0.95);
+            overflow-x: hidden;
+            transition: width 0.5s;
+            padding-top: 60px;
+        }
+        #sideNav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #sideNav ul li {
+            padding: 16px 32px;
+        }
+        #sideNav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            display: block;
+            transition: background 0.3s;
+        }
+        #sideNav ul li a:hover {
+            background-color: #45A049;
+        }
+        #mainContent.active {
+            margin-left: 250px;
+            transition: margin-left 0.5s;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 300;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <h1>🌿 Blog de Biologia</h1>
-            <nav>
-                <ul class="menu">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="guia-cultivo.html">Guia de Cultivo</a></li>
-                    <li><a href="#dicas">Dicas</a></li>
-                    <li><a href="#" id="loginBtn">Entrar</a></li>
-                </ul>
-            </nav>
+            <div class="menu-icon" id="menuToggle">
+                &#9776;
+            </div>
         </div>
     </header>
-    <main>
-        <section class="guide-intro">
-            <h2>Guia de Cultivo Completo 🌱</h2>
-            <p>Explore nosso guia abrangente sobre cultivo, ideal para iniciantes e especialistas! Aqui, você encontrará dicas essenciais para cuidar de suas plantas, aumentar a produtividade e manter um ambiente sustentável.</p>
-            <a href="assets/Guia Completo de Cultivo de Hortaliças.pdf" download>Baixar o Guia em PDF</a>
-        </section>
-
-        <section class="guide-viewer">
-            <h3>Visualize o Guia Aqui</h3>
-            <iframe src="assets/Guia%20Completo%20de%20Cultivo%20de%20Hortaliças.pdf" width="100%" height="600px" style="border: none;"></iframe>
-        </section>
-
-        <section class="comments-section">
-            <h3>Deixe seu Comentário</h3>
-            <p>Gostou do guia? Deixe sua opinião ou compartilhe suas dúvidas abaixo!</p>
-            <form id="commentsForm">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" placeholder="Seu nome" required>
-                
-                <label for="comment">Comentário:</label>
-                <textarea id="comment" name="comment" rows="4" placeholder="Escreva seu comentário aqui..." required></textarea>
-                
-                <button type="submit" class="btn-primary">Enviar Comentário</button>
-            </form>
-            <div id="commentsDisplay">
-                <!-- Comentários serão exibidos aqui dinamicamente -->
-            </div>
-        </section>
-    </main>
+    <nav id="sideNav">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="guia-cultivo.html">Guia de Cultivo</a></li>
+            <li><a href="#dicas">Dicas</a></li>
+            <li><a href="#" id="loginBtn">Entrar</a></li>
+        </ul>
+    </nav>
+    <div id="mainContent">
+        <main>
+            <section class="guide-intro">
+                <h2>Guia de Cultivo Completo 🌱</h2>
+                <p>Explore nosso guia abrangente sobre cultivo, ideal para iniciantes e especialistas! Aqui, você encontrará dicas essenciais para cuidar de suas plantas, aumentar a produtividade e manter um ambiente sustentável.</p>
+                <a href="assets/Guia Completo de Cultivo de Hortaliças.pdf" download class="btn-primary">Baixar o Guia em PDF</a>
+            </section>
+            <section class="guide-viewer">
+                <h3>Visualize o Guia Aqui</h3>
+                <iframe src="assets/Guia%20Completo%20de%20Cultivo%20de%20Hortaliças.pdf" width="100%" height="600px" style="border: none;"></iframe>
+            </section>
+            <section class="comments-section">
+                <h3>Deixe seu Comentário</h3>
+                <p>Gostou do guia? Deixe sua opinião ou compartilhe suas dúvidas abaixo!</p>
+                <form id="commentsForm">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    <label for="comment">Comentário:</label>
+                    <textarea id="comment" name="comment" rows="4" placeholder="Escreva seu comentário aqui..." required></textarea>
+                    <button type="submit" class="btn-primary">Enviar Comentário</button>
+                </form>
+                <div id="commentsDisplay">
+                    <!-- Comentários serão exibidos aqui dinamicamente -->
+                </div>
+            </section>
+        </main>
+    </div>
     <footer>
-        <p>&copy; 2025 Meu Blog de Biologia. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Blog de Biologia. Todos os direitos reservados.</p>
     </footer>
+    <a href="ajuda.html">
+        <img src="assets/Plant.gif" alt="Ajuda" class="help-gif">
+    </a>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

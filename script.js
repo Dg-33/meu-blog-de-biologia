@@ -75,3 +75,4 @@ document.getElementById("commentsForm").addEventListener("submit", function (eve
     // Limpar os campos
     document.getElementById("commentsForm").reset();
 });
+

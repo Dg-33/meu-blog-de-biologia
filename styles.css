@@ -133,3 +133,151 @@ main {
     border-top: 1px solid #e0e0e0;
     padding-top: 10px;
 }
+
+/* Estilo para o GIF de ajuda */
+.help-gif {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.2s;
+    /* Novas propriedades */
+    border: 2px solid #4CAF50; /* Borda de 2px na cor verde */
+    border-radius: 50%;        /* Arredonda a imagem em forma de círculo */
+    overflow: hidden;          /* Garante que a imagem não exceda os limites */
+}
+.help-gif:hover {
+    transform: scale(1.1);
+}
+
+.help-gif {
+    /* Outras propriedades... */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.help-gif {
+    /* Outras propriedades... */
+    animation: pulse 2s infinite;
+}
+@media (max-width: 600px) {
+    .help-gif {
+        width: 60px;
+        height: 60px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Estilo para o ícone do menu hambúrguer */
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+/* Estilo para o menu deslizante */
+#sideNav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    background-color: rgba(76, 175, 80, 0.95); /* Fundo verde semi-transparente */
+    overflow-x: hidden;
+    transition: width 0.5s;
+    padding-top: 60px;
+}
+
+/* Estilo dos links do menu */
+#sideNav ul {
+    list-style-type: none;
+    padding: 0;
+}
+#sideNav ul li {
+    padding: 16px 32px;
+}
+#sideNav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    display: block;
+    transition: background 0.3s;
+}
+#sideNav ul li a:hover {
+    background-color: #45A049;
+}
+
+/* Ajuste do conteúdo principal quando o menu está aberto */
+#mainContent.active {
+    margin-left: 250px; /* Mesma largura do menu */
+    transition: margin-left 0.5s;
+}
+
+/* Ocultar o menu original em telas menores */
+@media screen and (max-width: 768px) {
+    nav .menu {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Estilo para o modal */
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed;
+    z-index: 300; /* Nível mais alto */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fundo semi-transparente */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; /* Tamanho máximo */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Botão de fechar (X) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
